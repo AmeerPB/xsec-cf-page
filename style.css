@@ -81,6 +81,9 @@ main {
     padding: 0.75rem;
     cursor: pointer;
   }
+  & .increased-font {
+      font-size: 20px; /* You can adjust the size as needed */
+    }
 }
 
 .item:nth-of-type(2) .content {
@@ -155,3 +158,5 @@ main {
     &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
   }
 }
+
+                     
