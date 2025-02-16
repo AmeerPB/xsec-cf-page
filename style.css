@@ -104,7 +104,7 @@ main {
 }
 
 /* Updated navigation for arrow keys */
-.arrow-key-container {
+/* .arrow-key-container {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -134,7 +134,52 @@ main {
 .arrow-key:active, .arrow-key.press {
   transform: translate3d(-3px, 3px, 0);
   box-shadow: 0px 0px 0 #999, 0px 0px 0 #999, 0px 0px 0 #999, -1px 1px 0 #999;
+} */
+
+
+.arrow-key-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem; /* Slightly increased spacing */
+  z-index: 10; /* Ensures it stays above other elements */
+  background: rgba(0, 0, 0, 0.2); /* Subtle background to improve visibility */
+  padding: 0.5rem;
+  border-radius: 8px;
 }
+
+.arrow-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px; /* Slightly larger for better visibility */
+  height: 55px;
+  background: rgba(255, 255, 255, 0.7); /* Increased opacity for better contrast */
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-radius: 8px; /* More rounded */
+  font-size: 1.8rem; /* Increased for better readability */
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.arrow-key:active, .arrow-key.press {
+  transform: scale(0.9); /* Slight scale effect for click feedback */
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.arrow-key:hover {
+  background: rgba(255, 255, 255, 0.9); /* Slightly lighter on hover */
+}
+
+
+
 
 .arrow-key.left:before { content: "←"; }
 .arrow-key.up:before { content: "↑"; }
