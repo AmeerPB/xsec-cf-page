@@ -41,25 +41,17 @@
                             </mark>
                         </strong>
                     </p>
-                    <div style="padding-top: 20px;"></div>
-                    <!-- <p>More details are coming soon.</p> -->
-                    <div style="padding-top: 20px;"></div>
-                    <!-- <p>Please click the arrow keys at the bottom and go through other pages.</p> -->
-                    <div style="padding-top: 20px;"></div>
-                    <!-- <i>Tbh, there is nothing on these pages. :)</i> -->
-                    <div style="padding-top: 20px;"></div>
-                    <!-- <button>This button doesn't work!</button> -->
                 </div>
             </li>
         </ul>
-        <nav class="nav">
-            <ion-icon class="btn prev" name="arrow-back-outline"></ion-icon>
-            <ion-icon class="btn next" name="arrow-forward-outline"></ion-icon>
-        </nav>
+        
+        <!-- Replacing Ionicons navigation with arrow key navigation -->
+        <div class="arrow-key-container">
+            <div class="arrow-key left" data-key="37"></div>
+            <div class="arrow-key right" data-key="39"></div>
+        </div>
     </main>
     
-    <script type="module" src="Scripts/ionicons.esm.js"></script>
-    <script nomodule src="Scripts/ionicons.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
