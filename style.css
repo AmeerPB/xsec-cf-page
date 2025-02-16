@@ -9,6 +9,7 @@ body {
   display: grid;
   place-items: center;
   overflow: hidden;
+  background-color: #121212; /* Dark background for better contrast */
 }
 
 main {
@@ -50,12 +51,12 @@ main {
 .item:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
 
 .content {
-  width: min(30vw,400px);
+  width: min(30vw, 400px);
   position: absolute;
   top: 50%;
   left: 3rem;
   transform: translateY(-50%);
-  font: 400 0.85rem helvetica,sans-serif;
+  font: 400 0.85rem helvetica, sans-serif;
   color: white;
   text-shadow: 0 3px 8px rgba(0,0,0,0.5);
   opacity: 0;
@@ -63,7 +64,7 @@ main {
 }
 
 .content .title {
-  font-family: 'arial-black';
+  font-family: 'Arial Black', sans-serif;
   text-transform: uppercase;
 }
 
@@ -73,14 +74,31 @@ main {
   font-size: 0.8rem;
 }
 
+/* Updated link styling */
+.content .description a {
+  color: lightyellow;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap; /* Prevents line breaking */
+}
+
+.content .description a:hover {
+  text-decoration: underline;
+}
+
 .content button {
   width: fit-content;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   color: white;
   border: 2px solid white;
   border-radius: 0.25rem;
   padding: 0.75rem;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.content button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .content .increased-font {
@@ -103,52 +121,18 @@ main {
   }
 }
 
-/* Updated navigation for arrow keys */
-/* .arrow-key-container {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.arrow-key {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 2px solid rgba(0, 0, 0, 0.6);
-  border-radius: 6px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-.arrow-key:active, .arrow-key.press {
-  transform: translate3d(-3px, 3px, 0);
-  box-shadow: 0px 0px 0 #999, 0px 0px 0 #999, 0px 0px 0 #999, -1px 1px 0 #999;
-} */
-
-
+/* Updated arrow key navigation */
 .arrow-key-container {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.75rem; /* Slightly increased spacing */
-  z-index: 10; /* Ensures it stays above other elements */
-  background: rgba(0, 0, 0, 0.2); /* Subtle background to improve visibility */
+  gap: 0.75rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.2);
   padding: 0.5rem;
   border-radius: 8px;
 }
@@ -157,12 +141,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55px; /* Slightly larger for better visibility */
+  width: 55px;
   height: 55px;
-  background: rgba(255, 255, 255, 0.7); /* Increased opacity for better contrast */
+  background: rgba(255, 255, 255, 0.7);
   border: 2px solid rgba(0, 0, 0, 0.7);
-  border-radius: 8px; /* More rounded */
-  font-size: 1.8rem; /* Increased for better readability */
+  border-radius: 8px;
+  font-size: 1.8rem;
   font-weight: bold;
   color: black;
   cursor: pointer;
@@ -170,22 +154,19 @@ main {
 }
 
 .arrow-key:active, .arrow-key.press {
-  transform: scale(0.9); /* Slight scale effect for click feedback */
+  transform: scale(0.9);
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.4);
 }
 
 .arrow-key:hover {
-  background: rgba(255, 255, 255, 0.9); /* Slightly lighter on hover */
+  background: rgba(255, 255, 255, 0.9);
 }
 
-
-
-
+/* Arrow icons */
 .arrow-key.left:before { content: "←"; }
-.arrow-key.up:before { content: "↑"; }
-.arrow-key.down:before { content: "↓"; }
 .arrow-key.right:before { content: "→"; }
 
+/* Responsive Design */
 @media (width > 650px) and (width < 900px) {
   .content .title { font-size: 1rem; }
   .content .description { font-size: 0.7rem; }
