@@ -3,22 +3,24 @@ const slider = document.querySelector('.slider');
 function activate(e) {
   const items = document.querySelectorAll('.item');
 
-  if (e.target.matches('.next') || e.keyCode === 39) {
-    // Move next (Right arrow key)
+  if (e.target.matches('.right') || e.key === "ArrowRight") {
+    // Move to the next slide
     slider.append(items[0]);
-  } else if (e.target.matches('.prev') || e.keyCode === 37) {
-    // Move previous (Left arrow key)
+  } else if (e.target.matches('.left') || e.key === "ArrowLeft") {
+    // Move to the previous slide
     slider.prepend(items[items.length - 1]);
   }
 }
 
-// Listen for click events on navigation buttons
-document.addEventListener('click', activate, false);
+// Listen for clicks on the arrow buttons
+document.querySelectorAll('.arrow-key').forEach(button => {
+  button.addEventListener('click', activate);
+});
 
 // Listen for arrow key presses for slider navigation
 window.addEventListener('keydown', activate);
 
-// Handle arrow key visual effect
+// Handle arrow key visual effects
 window.addEventListener('keydown', arrowDown);
 window.addEventListener('keyup', arrowUp);
 
